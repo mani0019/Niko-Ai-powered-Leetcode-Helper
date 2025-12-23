@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neko</title>
+    <style>
+        /* --- Base Styling --- */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f8f9fc;
+  color: #333;
+  width: 280px;
+  padding: 16px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+h2 {
+  font-size: 22px;
+  color: #ff7b9c;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+select {
+  padding: 8px 10px;
+  border: 1.8px solid #ffadc0;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+select:hover {
+  border-color: #ff7b9c;
+}
+
+button {
+  background-color: #ff7b9c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: #ff4c78;
+  transform: translateY(-1px);
+}
+
+pre {
+  background: #fff;
+  border: 1px solid #ffe0ea;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 13px;
+  text-align: left;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  min-height: 40px;
+}
+
+/* --- Cute Loader --- */
+.loader {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.paw {
+  width: 18px;
+  height: 18px;
+  background-color: #ff7b9c;
+  border-radius: 50%;
+  margin: 0 4px;
+  animation: bounce 0.6s infinite alternate;
+}
+
+.paw:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.paw:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  to {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+    
+        <h2>
+            <img src="icon.png" alt="Neko Icon" width="24" height="24">
+            Neko
+        </h2>
+        
+    
+
+    
+    <div class ="options">
+        <select id="hint_type">
+            <option value="Basic_Hint">Basic hint </option>
+            <option value="Detailed_Hint">Detailed hint </option>
+            <option value="Final_Hint">Final hint </option>
+        </select>
+        <button id="submit_hint">Check Hint</button>
+    </div>
+    <pre id="result"> select a hint type</pre>
+
+    <div class="loader" id="loader">
+        <div class="paw"></div>
+        <div class="paw"></div>
+        <div class="paw"></div>
+    </div>
+    <script src ="popup.js"></script>
+    
+</body>
+</html>
